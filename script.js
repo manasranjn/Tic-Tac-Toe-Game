@@ -4,6 +4,8 @@ let newGameBtn = document.querySelector("#new-btn");
 let msgContainer = document.querySelector(".msg-container");
 let message = document.querySelector("#msg");
 
+resetBtn.classList.remove("hidden");
+
 let turnO = true;
 
 let winPatterns = [
@@ -48,6 +50,7 @@ const enableBox = () => {
 const showWinner = (winner) =>{
     message.innerText = `Congratulations, Winner is ${winner}`;
     msgContainer.classList.remove("hide");
+    resetBtn.classList.add("hidden");
     disableBox();
 };
 
@@ -71,6 +74,7 @@ const resetGame = () =>{
     turnO = true;
     enableBox();
     msgContainer.classList.add("hide");
+    resetBtn.classList.remove("hidden");
 };
 
 newGameBtn.addEventListener("click", resetGame);
