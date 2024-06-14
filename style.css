@@ -42,6 +42,11 @@ body{
     color: crimson;
     background-color: azure;
 }
+.turn-container{
+    margin: 1rem 0rem;
+    font-size: 2rem;
+    color: #09203f;
+}
 #reset{
     padding: 1rem;
     font-size: 1rem;

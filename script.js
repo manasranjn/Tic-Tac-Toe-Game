@@ -3,6 +3,9 @@ let resetBtn = document.querySelector("#reset");
 let newGameBtn = document.querySelector("#new-btn");
 let msgContainer = document.querySelector(".msg-container");
 let message = document.querySelector("#msg");
+let turnMessage = document.querySelector("#turn");
+
+turnMessage.innerText = "Start Game";
 
 resetBtn.classList.remove("hidden");
 
@@ -23,10 +26,15 @@ boxes.forEach((box) =>{
     box.addEventListener("click", () =>{
         if(turnO){
             box.innerText = "O";
+            box.style.color = "#059212";
             turnO = false;
+            turnMessage.innerText = "Player X's turn";
+            turnMessage.style.color = "#EE4E4E";
         }else{
             box.innerText = "X";
             turnO = true;
+            turnMessage.innerText = "Player O's turn";
+            turnMessage.style.color = "#365E32";
         }
         box.disabled = true;
 
