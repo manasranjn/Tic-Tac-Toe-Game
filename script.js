@@ -32,6 +32,7 @@ boxes.forEach((box) =>{
             turnMessage.style.color = "#EE4E4E";
         }else{
             box.innerText = "X";
+            box.style.color = "crimson";
             turnO = true;
             turnMessage.innerText = "Player O's turn";
             turnMessage.style.color = "#365E32";
