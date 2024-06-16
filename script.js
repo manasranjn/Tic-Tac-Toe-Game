@@ -60,6 +60,8 @@ const showWinner = (winner) =>{
     msgContainer.classList.remove("hide");
     resetBtn.classList.add("hidden");
     disableBox();
+    turnMessage.innerText = "Start New Game!";
+    turnMessage.style.color = "#09203f";
 };
 
 const checkWinner = () =>{
@@ -76,6 +78,16 @@ const checkWinner = () =>{
             }
         }
     }
+
+    // Check for a draw
+    if (Array.from(boxes).every(box => box.innerText !== "")) {
+        message.innerText = "It's a draw!";
+        msgContainer.classList.remove("hide");
+        resetBtn.classList.add("hidden");
+        disableBox();
+        turnMessage.innerText = "Start New Game!";
+        turnMessage.style.color = "#09203f";
+    }
 };
 
 const resetGame = () =>{
@@ -83,6 +95,8 @@ const resetGame = () =>{
     enableBox();
     msgContainer.classList.add("hide");
     resetBtn.classList.remove("hidden");
+    turnMessage.innerText = "Start Game";
+    turnMessage.style.color = "#09203f";
 };
 
 newGameBtn.addEventListener("click", resetGame);
